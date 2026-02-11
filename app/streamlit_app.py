@@ -11,6 +11,8 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
+from pathlib import Path
+
 
 # ============================================================
 # PAGE CONFIGURATION
@@ -50,14 +52,20 @@ st.markdown("""
 # HELPER FUNCTIONS
 # ============================================================
 
+
 @st.cache_data
 def load_data():
-    """Load and prepare the final data with model predictions"""
+    ## Fix path issues for deployment!!
+    # Get the directory where streamlit_app.py lives
+    current_dir = Path(__file__).parent
+    
+    # Locate the CSV relative to that directory
+    file_path = current_dir / "final_data.csv"
+    
     try:
-        df = pd.read_csv('final_data.csv')
-        return df
+        return pd.read_csv(file_path)
     except FileNotFoundError:
-        st.error("Data file not found. Please ensure 'final_data.csv' is in the app directory.")
+        st.error(f"File not found. Path checked: {file_path}")
         st.stop()
 
 def get_box_color(box_category):
