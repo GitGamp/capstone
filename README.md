@@ -7,7 +7,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/tanya-g-b2346b228/)  
 [![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:tanyagampert@gmail.com)  
-[![Portfolio](https://img.shields.io/badge/Portfolio-View-green)](https://github.com/GitGamp/capstone)
+
 
 ---
 
